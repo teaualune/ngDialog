@@ -228,6 +228,10 @@
 								$dialog.addClass(options.className);
 							}
 
+							if (angular.isArray(options.classNames)) {
+								angular.forEach(options.classNames, $dialog.addClass, $dialog);
+							}
+
 							if (options.appendTo && angular.isString(options.appendTo)) {
 								$dialogParent = angular.element(document.querySelector(options.appendTo));
 							} else {
